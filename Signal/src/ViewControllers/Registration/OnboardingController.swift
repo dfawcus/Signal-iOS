@@ -87,7 +87,7 @@ public class OnboardingController: NSObject {
         case registering
     }
 
-    public static let defaultOnboardingMode: OnboardingMode = UIDevice.current.isIPad ? .provisioning : .registering
+    public static let defaultOnboardingMode: OnboardingMode = UIDevice.current.isIPadOrIPod ? .provisioning : .registering
     public var onboardingMode: OnboardingMode
     public var isOnboardingModeOverriden: Bool {
         return onboardingMode != OnboardingController.defaultOnboardingMode

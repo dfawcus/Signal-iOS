@@ -109,6 +109,10 @@ public extension UIDevice {
         return userInterfaceIdiom == .pad
     }
 
+    var isIPadOrIPod: Bool {
+        return userInterfaceIdiom == .pad || (userInterfaceIdiom == .phone && model.hasPrefix("iPod"))
+    }
+
     var isFullScreen: Bool {
         let windowSize = CurrentAppContext().frame.size
         let screenSize = UIScreen.main.bounds.size
